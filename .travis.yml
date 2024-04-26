@@ -15,5 +15,11 @@ after_success:
    - docker build -t syed/multi-server ./server
    - docker build -t syed/multi-worker ./worker
 
+   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+   - docker push syed/multi-client
+   - docker push syed/multi-nginx
+   - docker push syed/multi-server
+   - docker push syed/multi-worker
+
 #Push images to DockerHub
 
