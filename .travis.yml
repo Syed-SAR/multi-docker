@@ -15,4 +15,5 @@ after_success:
    - docker build -t syed/multi-server ./server
    - docker build -t syed/multi-worker ./worker
 
-   
+#Push images to DockerHub
+
